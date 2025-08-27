@@ -1,0 +1,19 @@
+/* Base mini */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; background:#111; color:#eee; }
+img { max-width: 100%; height: auto; display:block; }
+h1, h2 { margin: 12px 0; }
+
+/* Grille simple */
+.row { display: grid; gap: 12px; grid-template-columns: 1fr; list-style: none; padding:0; margin:0; }
+@media (min-width: 768px) { .row { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px){ .row { grid-template-columns: repeat(3, 1fr); } }
+
+/* Cartes très basiques */
+.card, .row > li { background:#1b1b1b; border:1px solid #2a2a2a; padding:10px; border-radius:10px; }
+
+/* Modale <dialog> */
+#movie-modal { border: none; padding: 0; width: min(90vw, 720px); background:#fff; color:#111; }
+#movie-modal::backdrop { background: rgba(10,10,10,.75); }
+.modal-content { padding: 16px; }
+.close { position:absolute; right:8px; top:8px; border:none; background:transparent; font-size:24px; cursor:pointer; }

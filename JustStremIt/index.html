@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JustStreamIt</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <header>
+    <h1>JustStreamIt</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Meilleur film</h2>
+      <div id="best"></div>
+    </section>
+
+    <section>
+      <h2>Films les mieux notés</h2>
+      <ul id="top"></ul>
+    </section>
+
+    <section>
+      <h2>Catégorie 1 (Mystery)</h2>
+      <ul id="cat1"></ul>
+    </section>
+
+    <section>
+      <h2>Catégorie 2 (Sci-Fi)</h2>
+      <ul id="cat2"></ul>
+    </section>
+
+    <section>
+      <h2>Autres (par genre)</h2>
+      <select id="genres"></select>
+      <ul id="others"></ul>
+    </section>
+  </main>
+
+  <!-- Modale simple avec id -->
+  <dialog id="movie-modal">
+    <button id="close-modal">Fermer</button>
+    <div id="modal-content"></div>
+  </dialog>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
