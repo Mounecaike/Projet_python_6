@@ -4,17 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JustStreamIt</title>
-  <link rel="stylesheet" href="/styles/main.css" />
+  <!--- Import Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <header>
-    <h1>JustStreamIt</h1>
+    <div class="header-banner">
+      <img src="Images/logo.png" alt="logo JustStreamIt" class="logo-header">
+      <h1>Vidéos à la demande</h1>
+    </div>
   </header>
-
   <main>
     <section>
       <h2>Meilleur film</h2>
-      <div id="best"></div>
+      <div id="best" class="best-movie"></div>
     </section>
 
     <section>
@@ -45,6 +52,6 @@
     <div id="modal-content"></div>
   </dialog>
 
-  <script src="/js/main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

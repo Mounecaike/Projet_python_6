@@ -1,19 +1,167 @@
-/* Base mini */
-* { box-sizing: border-box; }
-body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; background:#111; color:#eee; }
-img { max-width: 100%; height: auto; display:block; }
-h1, h2 { margin: 12px 0; }
+/* === Reset de base === */
+* {
+  box-sizing: border-box;
+}
 
-/* Grille simple */
-.row { display: grid; gap: 12px; grid-template-columns: 1fr; list-style: none; padding:0; margin:0; }
-@media (min-width: 768px) { .row { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px){ .row { grid-template-columns: repeat(3, 1fr); } }
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 16px;
+    font-family: system-ui, sans-serif;
+    background: #fff;      /* fond blanc */
+    color: #000;           /* texte noir */
+    max-width: 837px;
+}
 
-/* Cartes très basiques */
-.card, .row > li { background:#1b1b1b; border:1px solid #2a2a2a; padding:10px; border-radius:10px; }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+h1{
 
-/* Modale <dialog> */
-#movie-modal { border: none; padding: 0; width: min(90vw, 720px); background:#fff; color:#111; }
-#movie-modal::backdrop { background: rgba(10,10,10,.75); }
-.modal-content { padding: 16px; }
-.close { position:absolute; right:8px; top:8px; border:none; background:transparent; font-size:24px; cursor:pointer; }
+    font-weight: 300;
+    font-style: light;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #fff;
+
+}
+h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+h3 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+h1, h2, h3, p, button {
+    font-family: Oswald;
+}
+
+/* === Grilles pour les listes === */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+/* === Header === */
+
+.logo-header {
+    width: 127px;
+    height: 94px;
+    margin-right: 25px;
+}
+
+.header-banner {
+    display: flex;
+    align-items: center;
+    max-width: 837px;
+    max-height: 122px;
+    background: #61787F;
+    padding: 20px;
+    margin-bottom: 20px
+;
+}
+
+/* === Best-movie === */
+
+.best-movie{
+    border: 6px solid #000000;
+    padding: 15px;
+    margin-bottom: 20px
+    
+}
+
+.card {
+    display: flex;
+}
+.img-best {
+    margin-right: 20px;
+}
+.best-movie-text{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* === Cartes de film === */
+.card,
+.row > li {
+  padding: 10px;
+}
+
+.card h3,
+.row > li p {
+  margin: 8px 0 0;
+}
+
+.card button,
+.row > li button {
+    width: 140px;
+    height: 50px;
+    background: #fa0b0b;
+    margin-top: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    align-self: self-end;
+}
+
+/* === Modale <dialog> === */
+#movie-modal {
+  border: none;
+  padding: 0;
+  width: min(90vw, 720px);
+  background: #fff;
+  color: #000;
+}
+
+#movie-modal::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+#modal-content {
+  padding: 16px;
+}
+
+#close-modal {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
