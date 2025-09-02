@@ -40,16 +40,19 @@
     </section>
 
     <section>
-      <h2>Autres (par genre)</h2>
-      <select id="genres"></select>
+      <div class="genre-filter">
+        <h2>Autres</h2>
+        <select id="genres" class="select-category"></select>
+      </div>
       <ul id="others" class="movie-list"></ul>
     </section>
   </main>
 
   <!-- Modale simple avec id -->
   <dialog id="movie-modal">
-    <button id="close-modal">Fermer</button>
-    <div id="modal-content"></div>
+    <div id="modal-content">
+      <button id="close-modal">Fermer</button>
+    </div>
   </dialog>
 
   <script src="main.js"></script>

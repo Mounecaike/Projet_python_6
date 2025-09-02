@@ -168,7 +168,7 @@ function openModal(id) {
         genres,
         `${rated} - ${durationMin}`.trim(),
         countries ? `(${countries})` : ""
-      ].filter(Boolean).join(" • ");
+      ].filter(Boolean).join("<br>");
 
       const score = m.imdb_score ? `IMDB score: ${m.imdb_score}/10` : "";
       const boxOffice = m.worldwide_gross_income
@@ -187,35 +187,47 @@ function openModal(id) {
                 ${score ? `<li>${score}</li>` : ""}
                 ${boxOffice ? `<li>${boxOffice}</li>` : ""}
               </ul>
-            </div>
-            <div class="modal-poster">
-              <img src="${m.image_url}" alt="${m.title}"
-                   onerror="this.onerror=null; this.src='${DEFAULT_IMAGE}'">
+              <p class="modal-label">Réalisé par&nbsp;:</p>
+              <p class="modal-text">${directors || "—"}</p>
             </div>
           </div>
 
-          <div class="modal-section">
-            <p class="modal-label">Réalisé par&nbsp;:</p>
-            <p class="modal-text">${directors || "—"}</p>
-          </div>
-
-          <div class="modal-section">
+          <div class="modal-section section-desc">
             <p class="modal-desc">${desc}</p>
           </div>
 
-          <div class="modal-section">
+          <div class="modal-poster">
+            <img src="${m.image_url}" alt="${m.title}"
+                onerror="this.onerror=null; this.src='${DEFAULT_IMAGE}'">
+          </div>
+
+          <div class="modal-section section-cast">
             <p class="modal-label">Avec&nbsp;:</p>
             <p class="modal-cast">${cast || "—"}</p>
           </div>
         </div>
       `;
-
-      // place le bouton "Fermer" en bas de la carte (fin du dialog)
-      modal.appendChild(closeBtn);
+      const card = modalContent.querySelector(".modal-card");
+      if (card) card.appendChild(closeBtn);
 
       modal.showModal();
     });
 }
+// Voir plus / Voir moins
+function addToggle(list){
+  if(!list) return;
+  const btn = document.createElement('button');
+  btn.className = 'toggle-more';
+  btn.type = 'button';
+  btn.textContent = 'Voir plus';
+  list.insertAdjacentElement('afterend', btn);
+  btn.addEventListener('click', () => {
+    const expanded = list.classList.toggle('expanded');
+    btn.textContent = expanded ? 'Voir moins' : 'Voir plus';
+  });
+}
+
+['top','cat1','cat2','others'].forEach(id => addToggle(document.getElementById(id)));
 
 // styles focus + fermeture
 closeBtn.addEventListener("click", () => modal.close());
